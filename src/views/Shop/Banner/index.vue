@@ -1,7 +1,8 @@
 <template>
  <div>
-     <v-list></v-list>
-     <v-info></v-info>
+      <el-button type="primary" @click="add">添加轮播</el-button>
+     <v-list @edit = "edit"></v-list>
+     <v-info :info="info" ref="dialog"></v-info>
  </div>
 </template>
 
@@ -10,10 +11,25 @@ import VList from './vlist'
 import VInfo from './vinfo'
 export default {
  data(){
- return{}
+ return{
+     info:{
+         isAdd:true,
+         isShow:false
+     }
+ }
  },
  created(){},
- methods:{},
+ methods:{
+     add(){
+         this.info.isAdd = true
+         this.info.isShow = true
+     },
+     edit(val){
+         this.info.isAdd = false
+         this.info.isShow = true
+         this.$refs.dialog.setinfo(val)
+     }
+ },
  components:{
      VList,
      VInfo

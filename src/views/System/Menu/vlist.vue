@@ -5,24 +5,24 @@
         <el-table-column prop="id" label="ID" align="center"></el-table-column>
         <el-table-column prop="title" label="菜单名称" align="center"></el-table-column>
         <el-table-column prop="url" label="菜单地址" align="center"></el-table-column>
-        <el-table-column label="图标">
+        <el-table-column label="图标" align="center">
             <template slot-scope="scope">
                 <i :class="scope.row.icon"></i>
             </template>
         </el-table-column>
-        <el-table-column label="类型">
+        <el-table-column label="类型" align="center" >
             <template slot-scope="scope">
                 <el-tag type="success" v-if="scope.row.type==1">目录</el-tag>
                 <el-tag type="warning" v-if="scope.row.type==2">菜单</el-tag>
             </template>
         </el-table-column>
-        <el-table-column label="状态">
+        <el-table-column label="状态" align="center">
             <template slot-scope="scope">
                 <el-tag type="success" v-if="scope.row.status==1">已启用</el-tag>
                 <el-tag type="warning" v-if="scope.row.status==2">禁用</el-tag>
             </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" align="center">
             <template slot-scope="scope">
                 <el-button type="primary" size="small" circle icon="el-icon-edit" @click="edit(scope.row)"></el-button>
                 <el-button type="danger" size="small" circle icon="el-icon-delete" @click="del(scope.row.id)"></el-button>

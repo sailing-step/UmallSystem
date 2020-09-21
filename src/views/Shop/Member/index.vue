@@ -1,7 +1,7 @@
 <template>
  <div>
-     <v-list></v-list>
-     <v-info></v-info>
+     <v-list @edit="edit"></v-list>
+     <v-info :info="info" ref="dialog"></v-info>
  </div>
 </template>
 
@@ -10,10 +10,19 @@ import VList from './vlist'
 import VInfo from './vinfo'
 export default {
  data(){
- return{}
+ return{
+    info:{
+        isShow:false
+    }
+ }
  },
  created(){},
- methods:{},
+ methods:{
+     edit(val){
+         this.info.isShow = true
+         this.$refs.dialog.setinfo(val)
+     }
+ },
  components:{
      VList,
      VInfo

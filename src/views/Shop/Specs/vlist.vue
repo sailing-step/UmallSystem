@@ -8,13 +8,13 @@
                   <el-tag v-for="(item,index) in scope.row.attrs" :key="index"  type="success">{{item}}</el-tag>
               </template>
           </el-table-column>
-         <el-table-column label="状态">
+         <el-table-column label="状态" align="center">
               <template slot-scope="scope">
                   <el-tag type="success" v-if="scope.row.status==1">启用</el-tag>
                   <el-tag type="danger" v-if="scope.row.status==2">禁用</el-tag>
               </template>
           </el-table-column>
-           <el-table-column label="操作">
+           <el-table-column label="操作" align="center">
                 <template slot-scope="scope">
                     <el-button type="primary" size="small" @click="edit(scope.row)" circle icon="el-icon-edit"></el-button>
                     <el-button type="danger" size="small"  @click="del(scope.row.id)"  circle icon="el-icon-delete"></el-button>

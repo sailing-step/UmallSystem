@@ -9,13 +9,13 @@
                  <span v-else>暂无图片</span>
              </template>
          </el-table-column>
-         <el-table-column label="状态">
+         <el-table-column label="状态" align="center">
             <template slot-scope="scope">
                 <el-tag type="success" v-if="scope.row.status==1">已启用</el-tag>
                 <el-tag type="warning" v-if="scope.row.status==2">禁用</el-tag>
             </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" align="center">
             <template slot-scope="scope">
                 <el-button type="primary" size="small" circle icon="el-icon-edit" @click="edit(scope.row)"></el-button>
                 <el-button type="danger" size="small" circle icon="el-icon-delete" @click="del(scope.row.id)"></el-button>
